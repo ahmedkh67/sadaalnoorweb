@@ -1,26 +1,859 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+
+:root {
+  --background: #000000 ; 
+  --foreground: #171717;
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --background: #ffffff;
+    --foreground: #000000;
+  }
+}
+* {
+  scroll-behavior: smooth;
+
+}
+body {
+  color: var(--foreground);
+  background: var(--background);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+@layer Components {
+  .NavBar {
+    @apply flex flex-row-reverse bg-white w-full md:h-[120px] h-[100px] md:px-8 pl-8 fixed justify-between items-center transition-[0.4s] ;
+    animation: Navbar 0.8s ease-in-out ;
+  }
+  .LogoContainer {
+    @apply md:w-[160px] w-[110px] h-full overflow-hidden flex justify-end items-center z-10 md:ml-20  ;
+    background-image: url("/Logo.jpg");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+
+  }
+  .NavlistContainer {
+    @apply md:w-1/4 w-full md:flex hidden flex-row-reverse justify-between items-center text-black ;
+  }
+
+  .Navlist-li {
+    @apply font-bold transition-[0.3] text-lg ;
+  }
+  .Navlist-li:hover {
+    transform: scale(100%);
+
+  }.Navlist-li::after {
+      content: "";
+      display: flex;
+      width: 0%;
+      height: 2px;
+      background-color: black;
+      transition: 0.3s;
+      margin-top: 5px; 
+  }.Navlist-li:hover::after {
+    width: 100%;
+    transform: scale(105%);
+    background-color: black;
+  }
+  .HeroProjects {
+    animation: backgroundanimate 10s ease-in-out infinite;
+
+  }
+
+
+  .Logobackground {
+    background-image: url("/logo.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-color: black;
+  }
+
+  .HeroBackground {
+    background-image: url("/Logo.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-color: black;
+    opacity: 50% ;
+    animation: changebgg 5s infinite ;
+    animation-delay: 5s;
+  }
+
+  @keyframes changebg {
+    0% {
+      background-image: url("/smartcartlogo.svg");
+    }50% { 
+      background-image: url("/trainimg3.jpeg");
+    }
+    100% {
+      background-image: url("/smartcartlogo.svg");
+    }
+  }
+
+
+  .greentriangle { 
+    width: 0; 
+    height: 0px ; 
+    border-left: 760px solid rgb(91, 165, 255);
+    border-right: 760px solid rgb(91, 165, 255);
+    
+    border-top: 150px solid white;
+  }
+
+  .whitetriangle { 
+    width: 0; 
+    height: 0px ; 
+    border-left: 760px solid #f6ac00;
+    border-right: 760px solid #f6ac00;
+    
+    border-top: 200px solid #ffffff;
+  }
+
+  .bluetriangle { 
+    width: 0; 
+    height: 0px ; 
+    border-left: 760px solid white;
+    border-right: 760px solid white;
+    
+    border-top: 200px solid rgb(91, 165, 255);
+  }
+
+
+  .trainimg1 {
+    background-image: url("/trainimg1.jpeg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-color: white;
+  }
+
+  .trainimg2 {
+    background-image: url("/trainimg2.jpeg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-color: white;
+  }
+
+  .trainimg3 {
+    background-image: url("/trainimg3.jpeg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-color: white;
+  }
+
+  .trainimg4 {
+    background-image: url("/trainimg4.jpeg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-color: white;
+  }
+
+  .trainimg5 {
+    background-image: url("/trainimg5.jpeg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-color: white;
+  }
+
+  .trainimg6 {
+    background-image: url("/trainimg6.webp");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-color: transparent;
+  }
+
+  .trainimg7 {
+    background-image: url("/trainimg7.jpeg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-color: white;
+  }
+
+
+
+  .elctrcar1 {
+    background-image: url("/elctrcar1.jpeg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-color: white;
+  }
+
+  .elctrcar2 {
+    background-image: url("/elctrcar2.jpeg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-color: white;
+  }
+
+
+  .elctrcar3 {
+    background-image: url("/elctrcar3.webp");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-color: transparent;
+  }
+
+
+  .elctrcar4 {
+    background-image: url("/elctrcar4.jpeg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-color: white;
+  }
+
+
+  .elctrcar5 {
+    background-image: url("/elctrcar5.jpeg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-color: white;
+  }
+
+
+
+  .cart1 {
+    background-image: url("/cart1.jpeg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-color: white;
+  }
+
+  .cart2 {
+    background-image: url("/cart2.jpeg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-color: white;
+  }
+
+  .cart3 {
+    background-image: url("/cart3.jpeg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-color: white;
+  }
+
+  
+  .cart4 {
+    background-image: url("/cart4.jpeg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-color: white;
+  }
+
+  .cart5 {
+    background-image: url("/cart5.jpeg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-color: white;
+  }
+
+  .cart6 {
+    background-image: url("/cart6.jpeg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-color: white;
+  }
+
+  .cart7 {
+    background-image: url("/cart7.jpeg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-color: white;
+  }
+
+  .cart8 {
+    background-image: url("/cart8.jpeg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-color: white;
+  }
+
+  .cart9 {
+    background-image: url("/cart9.webp");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-color: transparent;
+  }
+
+
+
+
+  .carto {
+    background-image: url("/cart1.jpeg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-color: white;
+  }
+
+
+  .manag1 {
+    background-image: url("/manag1.jpeg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-color: white;
+  }
+
+  .manag2 {
+    background-image: url("/manag2.jpeg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-color: white;
+  }
+
+
+  .manag3 {
+    background-image: url("/manag3.jpeg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-color: white;
+  }
+
+
+  .manag4 {
+    background-image: url("/manag4.jpeg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-color: white;
+  }
+
+
+  .manag5 {
+    background-image: url("/manag5.jpeg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-color: white;
+  }
+
+
+
+  .ballon1 {
+    background-image: url("/ballon1.webp");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-color: transparent;
+  }
+
+
+  .ballon2 {
+    background-image: url("/ballon2.jpeg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-color: white;
+  }
+
+
+  .ballon3 {
+    background-image: url("/ballon3.jpeg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-color: white;
+  }
+
+
+  .ballon4 {
+    background-image: url("/ballon4.jpeg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-color: white;
+  }
+
+
+  .ballon5 {
+    background-image: url("/ballon5.jpeg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-color: white;
+  }
+
+
+  .ballon6 {
+    background-image: url("/ballon6.jpeg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-color: white;
+  }
+
+
+  .ballon7 {
+    background-image: url("/ballon7.jpeg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-color: white;
+  }
+
+
+  .ballon8 {
+    background-image: url("/ballon8.jpeg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-color: white;
+  }
+
+
+
+
+  .bg1 {
+    background-image: url("/smartcartpng.webp");
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+  }
+
+
+
+
+
+
+
+  .image1 {
+    background-image: url("/image1.jpeg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+  
+  .image2 {
+    background-image: url("/image2.jpeg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+  
+  .image3 {
+    background-image: url("/image3.jpeg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+  
+  .image4 {
+    background-image: url("/image4.jpeg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+  
+  .image5 {
+    background-image: url("/image5.jpeg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+  
+  .image6 {
+    background-image: url("/image6.jpeg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+  
+  .image7 {
+    background-image: url("/image7.jpeg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+  
+  .image8 {
+    background-image: url("/image8.jpeg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+  
+  .image9 {
+    background-image: url("/image9.jpeg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+  
+  .image10 {
+    background-image: url("/image10.jpeg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+  
+  .image1 {
+    background-image: url("/image1.jpeg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+  
+  .image11 {
+    background-image: url("/image11.jpeg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+  
+  .image12 {
+    background-image: url("/image12.jpeg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+  
+  .image13 {
+    background-image: url("/image13.jpeg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+  
+  .image14 {
+    background-image: url("/image14.jpeg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+  
+  .image15 {
+    background-image: url("/image15.jpeg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+  
+
+
+  
+  .slide11 {
+    background-image: url("/slide11.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+  
+  
+  .slide22 {
+    background-image: url("/slide22.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+  
+  
+  .slide33 {
+    background-image: url("/slide33.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+  
+  
+  .slide44 {
+    background-image: url("/slide44.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+  
+  
+  .slide55 {
+    background-image: url("/slide55.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+  
+  
+  .slide66 {
+    background-image: url("/slide66.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+  
+  
+  .slide77 {
+    background-image: url("/slide77.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+  
+  
+  .slide88 {
+    background-image: url("/slide88.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+  
+  
+  .slide99 {
+    background-image: url("/slide99.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+  
+
+
+
+
+  .ServiceCard_Container {
+    @apply flex flex-col justify-between items-center w-[19rem]  mx-[20px] mb-[40px] overflow-hidden bg-gray-700 cursor-default transition-[0.2s] py-6 md:px-0 px-3 rounded-md;
+
+  }
+  .ServiceCard_ContainerDialog {
+    @apply flex flex-col justify-between items-center w-72 md:w-96 mx-[20px] mb-[40px] overflow-hidden bg-gray-700 cursor-default transition-[0.2s] py-6 rounded-md absolute;
+
+  }
+  .SserviceCard_Container::after {
+    @apply w-full h-[5px] bg-black content-[""] transition-[0.3s] absolute bottom-0 left-0 hover:h-[20%] ;
+  }
+  .ServiceCard_Image1 {
+    @apply opacity-100 flex w-72 h-40 rounded-lg ;
+    background-image: url("/image4.jpeg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+  .ServiceCard_Image2 {
+    @apply opacity-100 flex w-72 h-40   rounded-lg ;
+    background-image: url("/image7.jpeg");
+    background-position: start;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+  .ServiceCard_Image3 {
+    @apply opacity-100 flex w-72 h-40   rounded-lg ;
+    background-image: url("/image1.jpeg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+  .ServiceCard_Image4 {
+    @apply opacity-100 flex w-72 h-40   rounded-lg ;
+    background-image: url("/image3.jpeg");
+    background-position: end;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+  
+  .ServiceCard_Image5 {
+    @apply opacity-100 flex w-72 h-40   rounded-lg ;
+    background-image: url("/image15.jpeg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
+
+
+
+  .mainback1 {
+    @apply opacity-100 flex w-72 h-40   rounded-lg ;
+    background-image: url("/CloseIcon.svg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+  .mainback2 {
+    @apply opacity-100 flex w-72 h-40   rounded-lg ;
+    background-image: url("/CloseIcon.svg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+  .mainback3 {
+    @apply opacity-100 flex w-72 h-40   rounded-lg ;
+    background-image: url("/CloseIcon.svg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+  .mainback4 {
+    @apply opacity-100 flex w-72 h-40   rounded-lg ;
+    background-image: url("/CloseIcon.svg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
+
+
+  .ServiceCard_Content {
+    @apply flex flex-col justify-between items-center pt-6 ;
+  }
+  .ServiceCard_Title {
+    @apply text-4xl text-center font-bold ;
+  }
+  .ServiceCard_Bio {
+    @apply text-center ;
+  }
+
+  .Distancesec_Background {
+    @apply flex w-full h-72 ;
+    background-image: url('/testimg.jpeg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+  }
+  .Menuinactive {
+    transition: 0.5s;
+    visibility: visible;
+    opacity: 1;
+    transform: translateX(0);
+  }
+  .Menuactive {
+    transition: 0.5s;
+    visibility: hidden;
+    opacity: 0;
+    transform: translateX(-500px);
+  }
+
+}
+
+
+.fadeanimate {
+  animation: fadeanimate 1.1s ease-in-out;
+}
+.fadeanimate2 {
+  animation: fadeanimate2 0.6s ease-in-out;
+}
+.fadeanimate3 {
+  animation: fadeanimate 0.9s ease-in-out;
+}
+
+@keyframes backgroundanimate {
+  0% {
+      background-image: url("/img1.jpeg");
+  }
+  40% {
+      background-image: url("/img2.jpeg");
+  }
+  
+  50% {
+      background-image: url("/img3.jpeg");
+  }
+  90% {
+      background-image: url("/img2.jpeg");
+  }
+  100% {
+      background-image: url("/img1.jpeg");
+  }
+  
+}
+@keyframes Navbar {
+    0% {
+      transform: translateY(-130px);
+    }100% {
+      transform: translateY(0);
+    }
+
+}
+
+@keyframes fadeanimate {
+  0%{
+    opacity: 0%;
+
+  }100% {
+    opacity: 100%;
+  }
+}
+@keyframes fadeanimate2 {
+  0%{
+    transform: scale(90%);
+
+  }100% {
+    transform: scale(100%);
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+
+.image1, .image2, .image3, .image4, 
+.image5, .image6, .image7, .image8, .image9, .image10, .image11 , .image12, .slide11,.slide22,.slide33,
+.slide44,.slide55,.slide66,.slide77,.slide88,.slide99 {
+  background-image: url("/CloseIcon.svg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
+
+
+
+.decorbg { 
+    background-image: url("/decorbg.jpeg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-color: white;
+}
+
+.soundbg { 
+    background-image: url("/sound.jpeg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-color: white;
+}
+
+.luxurybg { 
+    background-image: url("/luxurybg.jpeg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-color: white;
+}
+
+.specialbg { 
+    background-image: url("/special.jpeg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-color: white;
+}
+
+.deliverybg { 
+    background-image: url("/delivery.jpeg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-color: white;
+}
+
